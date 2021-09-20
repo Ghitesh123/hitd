@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/jsp.css">
+
+</head>
+
+<body>
+ <div id="view-container">
+ 	<div id="view1">
+    <div class="vbtns"><button class="vbclass" id="viewbtn2"><a href="index.html">Home</a></button><button class="vbclass" id="viewbtn1"><a href="showviewB.html">Back</a></button></div>
+ 	</div>
+ 	<div id="view2"> <h1>Student Data</h1></div>
+ 	<div id="view3">
+ 		<div id=view-box3>
+ <table>
+<thead>
+<tr><th>Roll-NO</th><th>Name</th><th>College</th><th>City</th><th>Mobile-NO</th>
+<th>Branch</th><th>Gender</th><th>Edit</th><th>Delete</th></tr>
+</thead>
+<tbody>
+<c:forEach var="std"  items="${eList}">
+<tr>
+<td>${std.getRollno()}</td>
+<td>${std.getName()}</td>
+<td>${std.getCollege()}</td>
+<td>${std.getCity()}</td>
+<td>${std.getMobileno()}</td>
+<td>${std.getGender()}</td>
+<td>${std.getBranch()}</td>
+<td><a href="success.html">Edit</a></td>
+<td><a href="delete.html">Delete</a></td>
+/*  edit.jsp?empno=${std.getRollno()}
+delete.jsp?empno=${std.getRollno()}
+*/
+</tr>
+</c:forEach>
+</tbody>
+</table>
+ 		</div>
+ 	</div>
+ </div>
+</body>
+</html>
